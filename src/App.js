@@ -12,6 +12,14 @@ class App extends React.Component{
     display: false
   }
 
+  componentDidMount(){
+    // console.log('mounting')
+
+    fetch('http://localhost:3000/toys/')
+    .then(res=> res.json())
+    .then(data=> console.log(data))
+}
+
   handleClick = () => {
     let newBoolean = !this.state.display
     this.setState({
